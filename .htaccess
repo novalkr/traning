@@ -1,0 +1,20 @@
+#Options +FollowSymLinks
+AddDefaultCharset UTF-8
+IndexIgnore */*
+RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+php_flag display_startup_errors on
+php_value error_reporting 32767
+php_flag display_errors On
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+php_value memory_limit 64M
+php_value post_max_size 20M
+php_value upload_max_filesize 20M
+php_value upload_tmp_dir "/tinymce"

@@ -1,0 +1,12 @@
+.buildpath
+.project
+/.settings
+/nbproject
+/.idea
+*.gz
+*.DS_Store
+assets/*
+protected/runtime/*
+protected/env.php
+protected/config/local.php
+        

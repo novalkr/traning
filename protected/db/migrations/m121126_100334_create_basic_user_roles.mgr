@@ -1,0 +1,68 @@
+<?php
+/**
+ * m121126_100334_create_basic_user_roles class
+ *
+ * PHP version 5
+ *
+ * @category [APP]
+ * @package  App.db
+ * @author   Eugeniy Marilev <marilev@jviba.com>
+ * @license  https://jviba.com/display/license proprietary
+ * @link     https://jviba.com/display/PhpDoc
+ */
+/**
+ * m121126_100334_create_basic_user_roles is the database migration class
+ * which applies "some" changes in database
+ *
+ * PHP version 5
+ *
+ * @category [APP]
+ * @package  App.db
+ * @author   Eugeniy Marilev <marilev@jviba.com>
+ * @license  https://jviba.com/display/license proprietary
+ * @link     https://jviba.com/display/PhpDoc
+ */
+class m121126_100334_create_basic_user_roles extends CDbMigration
+{
+    const ERROR_NO_AUTH_MANAGER = "Couldn't load the authentication manager component.\n";
+    /**
+     * Process database upgrade under transaction
+     *
+     * @return bool whether upgrade compelted successfully
+     */
+    public function safeUp()
+    {
+        if (!$manager = Yii::app()->getComponent('authManager')) {
+            echo self::ERROR_NO_AUTH_MANAGER;
+            return false;
+        }
+        
+        $admin = Yii::app()->params['admin'];
+        $admin['password'] = md5($admin['password']);
+        $user = new YUser();
+        $user->setAttributes(array_merge(array(
+            'first_name' => 'admin',
+            'last_name'  => 'admin',
+            'status'    => 'active',
+            'email' => 'contacts@jviba.com'
+        ), $admin));
+        if($user->save()) {
+            $manager->assign(YAuthManager::ROLE_ADMIN, $user->id);
+        } else {
+            $params = array('{ERROR}' => var_dump($user->getErrors()));
+            $message = Yii::t('core', 'Can\'t save model with error: "{ERROR}"!', $params);
+            throw new CException($message);
+        }
+    }
+
+    /**
+     * Process database downgrade under transaction
+     *
+     * @return bool whether downgrade compelted successfully
+     */
+    public function safeDown()
+    {
+        echo 'Can\'t process downgrade!';
+        return false;
+    }
+}

@@ -1,0 +1,9 @@
+[submodule "protected/vendors/jvibasta"]
+	path = protected/vendors/jvibasta
+	url = git@jviba.com:jvibasta
+[submodule "protected/vendors/yii-cms"]
+	path = protected/vendors/yii-cms
+	url = git@jviba.com:yii-cms
+[submodule "protected/vendors/yii"]
+	path = protected/vendors/yii
+	url = git@github.com:yiisoft/yii.git
