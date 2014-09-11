@@ -1,4 +1,36 @@
-<div class="span-5" style="height: 200px;border-width:5px; border-color: blue;border-style:solid;">
+<style>
+.items {
+     position:relative;
+}
+
+.items  img {
+    //position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+        margin: 0;
+        padding: 0;
+}
+
+
+    
+</style>
+    
+
+
+
+<div class="span-8" 
+     style=" 
+        height: 400px;
+        border-width:1px; 
+        border-color: blue;
+        border-style:solid;
+        margin: 0;
+        padding: 0;
+     " ;
+     
+       >
     <!-- style="height: 200px;border-width:5px; border-color: red;border-style:solid;" -->
    <?php 
    /*class="pre-articles" 
@@ -14,18 +46,11 @@
     
     */
     ?>
-    
-
-    
-    
 <?php 
-
-
-
     Yii::app()->syntaxhighlighter->addHighlighter();
     $alt= $data->published->info->shortText;
     $alt= strip_tags($alt);
-
+    $alt= html_entity_decode($alt);
     $revision=$data->published;
     if (isset($revision->main_media_object_id)) {
 
@@ -66,17 +91,6 @@
             </div><!--main_foto-->
             */
 ?>
-             
-             
-            
-            
-
-
-    
-
-
-
-
 <?php    
     
     /*
@@ -102,6 +116,4 @@
     */
     
   ?>  
-    
-    
-</div>
+</div> <!--class="span-" -->

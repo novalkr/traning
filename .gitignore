@@ -9,4 +9,7 @@ assets/*
 protected/runtime/*
 protected/env.php
 protected/config/local.php
+upload/*
+tinymce/*
+
         

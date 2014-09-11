@@ -35,14 +35,8 @@ $model = YCMS::model('new', 'YArticleSearch')->getTagsList;
 </div>
 
 
-
-
-
-
-
-
 <?php 
-    $this->widget('YArticlesList', array(       // zii.widgets.CListView
+    $this->widget('YArticlesList', array(       // zii.widgets.CListView  YArticlesList
         'id'            => 'articles-list-view',
         'dataProvider'  => $model->search(),
         'itemView'      =>'_articles',
@@ -59,8 +53,11 @@ $model = YCMS::model('new', 'YArticleSearch')->getTagsList;
         ),
 		'htmlOptions' => array (
 				'class' => 'row',
-				'style' => 'height: 200px;border-width:5px; border-color: red;border-style:solid;width: 80%;margin:0 auto;' 
+				'style' => 'height: 200px;border-width:5px; border-color: red;border-style:solid;margin:0;padding:0;' 
 		) 
         
     ));
 ?>
+
+  <!-- end of index data -->
+

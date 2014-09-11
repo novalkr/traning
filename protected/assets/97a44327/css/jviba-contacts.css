@@ -1,0 +1,219 @@
+#contacts-container {
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#contacts-container #contacts-bar li {
+    display: inline;
+    margin-left: 8px;
+}
+
+#contacts-container #contacts-bar li a.contact-us-button {
+    color: #626161;
+    background:url(../images/small-slash-gray.png) no-repeat  left center;
+    padding-left:10px;
+}
+
+#contacts-container #contacts-bar li a.contact-us-button:hover {
+    background:url(../images/small-slash-yellow.png) no-repeat  left center;
+    text-decoration: none;
+    color: #ffb400;
+}
+.contacts-container .contact-us-button {
+    color: black;
+    font-size: 11px;
+    position: relative;
+    top: -3px;
+}
+.contacts-container .contact-us-button:hover {
+    color: #FFB400;
+}
+
+#contact_us_dialog, #contact_us_dialog h1 {
+    font-size: 14px;
+    font-family: Lucida;
+    font-weight: normal;
+}
+
+#contact_us_dialog {
+    height: auto !important;
+    font-size: 13px;
+}
+
+#contact_us_dialog .form .row label{
+    font-weight: normal;
+}
+
+#contact_us_dialog .form .row input, #contact_us_dialog .form .row textarea {
+    border-width: 1px;
+    border-color:  #ECECEC;
+}
+
+#contact_us_dialog .form .row.error input, #contact_us_dialog .form .row.error textarea{
+    border-color: red;
+}
+
+#contact_us_dialog .form .row.success input {
+    background: white;
+}
+
+.popup-msg {
+    padding: 30px 20px 25px 15px !important;
+    background: white;
+    border: 1px solid #ececec;
+    top: 51px;
+}
+
+.popup-msg .close-btn {
+    width: 14px;
+    height: 13px;
+    background-image: url('../images/close_button.png');
+    cursor: pointer;
+}
+
+.popup-arrow {
+    top: 37px;
+}
+
+.popup-arrow.top {
+    background: url('../images/arrow_up.png') no-repeat;
+    width: 29px !important;
+    height: 15px !important;
+    z-index: 100000 !important;
+}
+
+.popup-msg .close-btn {
+    background-color: blue;
+    opacity: 0.8;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+table.detail-view {
+    margin-top: 20px;
+    color: black;
+    font-size: 14px !important;
+}
+
+table.detail-view tr.odd, table.detail-view tr.even{
+    background: white!important; ;
+}
+
+table.detail-view tr.active {
+    background: yellow !important;
+}
+
+table.detail-view th, table.detail-view td {
+    border: 0px !important;
+}
+
+table.detail-view th {
+    width: 75px !important;
+    text-align: left !important;
+
+}
+
+.ui-widget.ui-dialog {
+    border: 1px solid #ECECEC;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.ui-widget.ui-dialog .ui-dialog-titlebar {
+    background: none;
+    border: 0;
+    height: 20px;
+}
+
+.ui-widget.ui-dialog .ui-dialog-titlebar-close span {
+    width: 14px;
+    height: 13px;
+    background-image: url('../images/close_button.png');
+    background-position: 0 0;
+}
+
+.ui-widget.ui-dialog .ui-dialog-titlebar-close {
+    padding: 0px;
+    top: 60%;
+    right: .2em;
+}
+
+.ui-widget.ui-dialog .ui-dialog-titlebar-close:hover {
+    border: 0;
+    background: transparent;
+}
+
+.ui-widget.ui-dialog .ui-dialog-title {
+    display: none;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    font-family: Lucida;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+#contact_us_dialog, #contact_us_dialog h1 {
+    font-size: 14px;
+    font-family: Lucida;
+    font-weight: normal;
+}
+
+#contact_us_dialog {
+    height: auto !important;
+    font-size: 13px;
+}
+
+#contact_us_dialog .form .row label{
+    font-weight: normal;
+}
+
+#contact_us_dialog .form .row input, #contact_us_dialog .form .row textarea {
+    border-width: 1px;
+    border-color:  #ECECEC;
+}
+
+#contact_us_dialog .form .row.error input, #contact_us_dialog .form .row.error textarea{
+    border-color: red;
+}
+
+#contact_us_dialog .form .row.success input {
+    background: white;
+}
+
+.ui-widget.ui-dialog .ui-dialog-buttonpane {
+    border: 0px;
+    margin-top: 0px;
+}
+
+.ui-dialog .ui-widget-content.ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: left;
+    margin-left: 8px;
+}
+
+.ui-dialog .ui-widget-content.ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
+    background: #ffe800; /* for non-css3 browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe800', endColorstr='#f9cd00'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffe800), to(#f9cd00)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #ffe800,  #f9cd00); /* for firefox 3.6+ */
+}
+
+
+.ui-widget.ui-dialog .ui-button.ui-corner-all {
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    border-radius: 0px;
+}
+
+
+
+.ui-widget.ui-dialog .ui-widget-content {
+    border-color:  #ECECEC;
+}
+
+

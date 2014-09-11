@@ -1,0 +1,54 @@
+#logo {
+    margin: 0px;
+    padding: 0px;
+}
+
+#logo a, #logo a:hover {
+    text-decoraion: none;
+}
+
+#logo .site_name, #logo .slogan {
+    line-height: 16px;
+    color: black;
+    text-shadow: white 0px -1px 10px, white 0px -1px 3px, white 0px -1px 4px;
+    position: absolute;
+}
+
+#logo .site_name {
+    display: inline-block;
+    height: 40px;
+    font-size: 45px;
+}
+
+#logo .slogan {
+    left: 30px;
+    top: 28px;
+    width: 130px;
+    font-size: 10px;
+    display: inline-block;
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) {
+    /*здесь стили для хрома*/
+    #logo .logo_texts {
+        top: 87px;
+    }
+
+    #logo .slogan {
+        top: 32px;
+    }
+}
+
+#header #logo {
+    height: 180px;
+    width: 250px;
+    top: 0px;
+}
+
+.sunset-image {
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    opacity: 0;
+    filter:alpha(opacity=0); /* For IE8 and earlier */
+}

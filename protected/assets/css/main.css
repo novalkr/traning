@@ -7,6 +7,13 @@ body
 	background: #EFEFEF;
 }
 
+/*
+#headers {
+    
+    margin: 0,auto;
+    text-align:center;}
+*/
+
 #page
 {
 	margin-top: 5px;
@@ -20,6 +27,10 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 3px solid #C9E0ED;
+}
+
+#logo {
+	width: 150px;
 }
 
 #content

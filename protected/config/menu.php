@@ -22,6 +22,27 @@ $ret = array(
         'url'   => array('/site/admin'),
     ),
     array(
+        'label' => Yii::t('menu', 'About'),
+        'url'   => array('/page/about'),
+    ),
+    array(
+        'label' => Yii::t('menu', 'Our Project'),
+        'url'   => array('/articles/article'),
+    ),
+    array(
+        'label' => Yii::t('menu', 'Our Services'),
+        'url'   => array('page/service'),
+    ),
+    array(
+        'label' => Yii::t('menu', 'Blog'),
+        'url'   => 'http://blog',
+    ),
+    array(
+        'label' => Yii::t('menu', 'Contacts'),
+        'url'   =>  array('page/contacts'),
+        //'url'   =>  array('static/page/4'),
+    ),
+    array(
         'label' => 'Modules',
         'items' => array(
             array(
@@ -69,6 +90,7 @@ $ret = array(
                 'url' => array('/core/language/admin'),
                 'visible' => $user->checkAccess(YLanguageController::TASK_MANAGE),
             ),
+
         ),
     ),
 );

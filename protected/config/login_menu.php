@@ -20,6 +20,7 @@ $ret = array(
         'label' => Yii::t('menu', 'Home'),
         'url'   => array('/site/admin'),
     ),
+
     array(
         'label' => Yii::t('menu', 'Register'),
         'url' => array('/core/auth/registration'),

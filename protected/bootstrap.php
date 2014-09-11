@@ -18,6 +18,7 @@ Yii::setPathOfAlias('jvibasta', JVIBASTA_PATH);
 Yii::setPathOfAlias('cms', YII_CMS_PATH . '/cms');
 Yii::setPathOfAlias('bootstrap', YII_CMS_PATH . '/cms/extensions/bootstrap');
 Yii::setPathOfAlias('system', YII_FRAMEWORK_PATH);
+Yii::setPathOfAlias('common', JVIBA_COMMON_PATH);
 if (defined('LITE_VERSION') && LITE_VERSION) {
     $dirname = dirname(__FILE__);
     Yii::setPathOfAlias('application', $dirname);

@@ -37,6 +37,19 @@ $self = array(
         ),
         'depends' => array('common'),
     ),
+    //init jviba logo
+    'widgets' => array(
+        'basePath' => 'application.assets',
+        'depends' => array(
+            'widgets.JvibaLogo',
+            //'widgets.ContactsBar',
+            //'widgets.PopupMessage',
+            //'widgets.JuiDialog',
+            //'widgets.StickyScrollWidget',
+            //'widgets.SliderListView',
+        ),
+    ),    
+    
 );
 
 $cms = include Yii::getPathOfAlias('cms') . '/assets.php';
