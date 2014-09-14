@@ -34,12 +34,17 @@ $self = array(
             'css/ie.css',
             'css/form.css',
             'css/screen.css',
+            'css/mainmenu.css',//main menu style
+            
         ),
         'depends' => array('common'),
     ),
     //init jviba logo
+    /*
     'widgets' => array(
         'basePath' => 'application.assets',
+        //'basePath' => 'common.assets',
+       //common.widgets.assets'
         'depends' => array(
             'widgets.JvibaLogo',
             //'widgets.ContactsBar',
@@ -48,11 +53,15 @@ $self = array(
             //'widgets.StickyScrollWidget',
             //'widgets.SliderListView',
         ),
-    ),    
+    ),   
+      */
+      
     
 );
 
+$commonPack = include Yii::getpathOfAlias('common') . '/assets.php';
 $cms = include Yii::getPathOfAlias('cms') . '/assets.php';
+$cms=CMap::mergeArray($cms,$commonPack);
 return CMap::mergeArray(
     include Yii::getPathOfAlias('jvibasta') . '/assets.php',
     $cms,

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Main application configuration
  *
@@ -10,7 +11,6 @@
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     https://jviba.com/display/PhpDoc/yii-cms
  */
-
 ini_set('mbstring.internal_encoding', 'UTF8');
 
 $dirname = dirname(__FILE__);
@@ -24,15 +24,10 @@ $routes = include $dirname . '/routes.php';
 $packages = is_file($dirname . '/assets.php') ? include $dirname . '/assets.php' : array();
 
 $conf = array(
-
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-
     'name' => 'tran8',
-
     'language' => 'en',
-
     'preload' => array('log'),
-
     'import' => array(
         //application section
         'application.models.*',
@@ -168,9 +163,7 @@ $conf = array(
         'cms.modules.vkontakte.*',
         'cms.modules.vkontakte.controllers.*',
         'cms.modules.vkontakte.components.*',
-
     ),
-
     'modules' => array(
         'core' => array(
             'class' => 'YCoreModule',
@@ -229,7 +222,7 @@ $conf = array(
             'class' => 'YInviteModule',
             'basePath' => $cmsModulesBasePath . '/invite'
         ),
-         'users' => array(
+        'users' => array(
             'class' => 'YUsersModule',
             'basePath' => $cmsModulesBasePath . '/users',
             'controllerMap' => array(
@@ -294,11 +287,9 @@ $conf = array(
             'class' => 'YVkontakteModule',
             'basePath' => $cmsModulesBasePath . '/vkontakte'
         ),
-
     ),
-
     'components' => array(
-          'console' => array(
+        'console' => array(
             'class' => 'jvibasta.extensions.cli.CConsole',
             'displayCommands' => false,
         ),
@@ -313,7 +304,7 @@ $conf = array(
         'session' => array(
             'class' => 'CHttpSession',
         ),
-        'urlManager'=>array(
+        'urlManager' => array(
             'class' => 'cms.modules.core.components.YUrlManager',
             'urlFormat' => defined('LITE_BUILING') && LITE_BUILING ? 'get' : 'path',
             'showScriptName' => false,
@@ -331,7 +322,7 @@ $conf = array(
         ),
         'authManager' => array(
             'class' => 'application.components.AuthManager',
-            //'defaultRoles' => array('guest'),
+        //'defaultRoles' => array('guest'),
         ),
         'errorHandler' => array(
             // use 'site/error' action to display errors
@@ -363,9 +354,9 @@ $conf = array(
             'Password' => 'eiye9Ohw',
             'SMTPAuth' => true,
             'ContentType' => 'text/html',
-            'From'     => 'contacts@jviba.com',
+            'From' => 'contacts@jviba.com',
             'FromName' => 'JVIBA Webmaster',
-            'CharSet'  => 'UTF-8',
+            'CharSet' => 'UTF-8',
         ),
         'db' => array(
             'connectionString' => 'mysql:host=127.0.0.1;dbname=yii_cms',
@@ -382,7 +373,7 @@ $conf = array(
         ),
         'cache' => array(
             'class' => 'CFileCache',
-            //'class' => 'CDummyCache',
+        //'class' => 'CDummyCache',
         ),
         'glCache' => array(
             'class' => 'CFileCache',
@@ -400,15 +391,15 @@ $conf = array(
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
                 ),
-                /*array(
-                    'class' => 'CWebLogRoute',
-                ),*/
-                /*array(
-                    'class'=>'XWebDebugRouter',
-                    'config'=>'alignLeft, opaque, runInDebug, fixedPos, collapsed, yamlStyle',
-                    //'allowAjax'=>true,
-                    'levels'=>'error, warning, trace, profile, info',
-                ),*/
+            /* array(
+              'class' => 'CWebLogRoute',
+              ), */
+            /* array(
+              'class'=>'XWebDebugRouter',
+              'config'=>'alignLeft, opaque, runInDebug, fixedPos, collapsed, yamlStyle',
+              //'allowAjax'=>true,
+              'levels'=>'error, warning, trace, profile, info',
+              ), */
             ),
         ),
         'storage' => array(
@@ -444,10 +435,9 @@ $conf = array(
             'class' => 'CFormatter',
         ),
     ),
-
     'params' => array(
         'admin' => array(
-            'email'    => 'webmaster@jviba.com',
+            'email' => 'webmaster@jviba.com',
             'password' => 'admin'
         ),
         'email' => array(
@@ -455,11 +445,19 @@ $conf = array(
         ),
         'cache' => array(
             'default' => array(
-                'duration' => 30 * 24 * 3600,//1 month
+                'duration' => 30 * 24 * 3600, //1 month
             ),
         ),
         'contacts' => array(
-            //please add recipients in the local config
+        //please add recipients in the local config
+        ),
+        'features' => array(
+            'sun' => array(
+                'enabled' => false,
+            ),
+            'tiny' => array(
+                'enabled' => false,
+            ),
         ),
     ),
 );

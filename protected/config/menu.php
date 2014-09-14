@@ -19,19 +19,23 @@ $route = Yii::app()->controller->route;
 $ret = array(
     array(
         'label' => Yii::t('menu', 'Home'),
-        'url'   => array('/site/admin'),
+        //'url'   => array('/page/home'),
+        'url'   => array('/static/page/view','id'=>'6'),
+        
     ),
     array(
         'label' => Yii::t('menu', 'About'),
-        'url'   => array('/page/about'),
+        //'url'   => array('/page/about'),
+        'url'   => array('/static/page/view','id'=>'3'),
     ),
     array(
         'label' => Yii::t('menu', 'Our Project'),
-        'url'   => array('/articles/article'),
+        'url'   => array('/articles/article/index'),
     ),
     array(
         'label' => Yii::t('menu', 'Our Services'),
-        'url'   => array('page/service'),
+        'url'   => array('/static/page/view','id'=>'4'),
+        //'url'   => array('/page/service'),
     ),
     array(
         'label' => Yii::t('menu', 'Blog'),
@@ -39,8 +43,9 @@ $ret = array(
     ),
     array(
         'label' => Yii::t('menu', 'Contacts'),
-        'url'   =>  array('page/contacts'),
-        //'url'   =>  array('static/page/4'),
+        //'url'   =>  array('page/contacts'),
+        
+        'url'   => array('/static/page/view','id'=>'5'),
     ),
     array(
         'label' => 'Modules',

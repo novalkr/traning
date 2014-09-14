@@ -28,6 +28,22 @@
  */
 class ArticleController extends YArticleController {
 
+    public function accessRules() {
+         $publicView = $this->getModule()->publicArticles;
+        $env = array(
+            array('allow',
+                'actions' => array('list'),
+                'roles' => array_merge(
+                        array(
+                    self::OPERATION_VIEW => array('id' => isset($_REQUEST['id']) ? $_REQUEST['id'] : null),
+                        ), $publicView ? array(YAuthManager::ROLE_GUEST) : array()
+                )
+            ),
+        );
+return $env;
+        return CMap::mergeArray($this->accessRules(), $env);
+    }
+
     /**
      * Canonical URL for home page needed for SEO purposes
      * 
@@ -35,14 +51,20 @@ class ArticleController extends YArticleController {
      * @see YArticleController::actionIndex()
      */
     public function actionIndex() {
-        $this->layout='//layouts/main';
+        $this->layout = '//layouts/main';
         $model = YCMS::model('new', 'YArticleSearch');
         $model->revisionType = SandboxBehavior::PUBLISHED_REVISION;
         $model->addSortField('object.create_time', SearchModel::SORT_DIRECTION_DESC);
         $request = Yii::app()->request;
 
         if ( $categories = $request->getParam('categories') ) {
-            $model->categories = $categories;
+            $cat = strpos($categories, 'c_');
+            if ( $cat === 0 ) {
+                $model->categories = substr($categories, 2, strlen($categories) - 2);
+            } else {
+                $model->categories = $categories;
+            }
+            $categories = Yii::app()->controller->module->resolveTagsByNames($categories);
         }
         if ( $tags = $request->getParam('tags') ) {
             if ( $tags = Yii::app()->controller->module->resolveTagsByNames($tags) ) {
@@ -54,11 +76,17 @@ class ArticleController extends YArticleController {
         if ( $attributes = $request->getParam(get_class($model)) ) {
             $model->setAttributes($attributes);
         }
+        $meta = array();
+
         $meta = $this->getModule()
-                        ->getComponent('categoryMetaBuilder')->build($categories);
+                ->getComponent('categoryMetaBuilder')
+                ->build($categories);
+
 
         $model->language = YLanguage::getIdByName(Yii::app()->getLanguage());
         $this->render('index', compact('model', 'meta'));
+
+
         /*
 
 
@@ -121,6 +149,36 @@ class ArticleController extends YArticleController {
         $globalData = Yii::app()->getModule('core')->getComponent('globalData');
         $globalData->addCommonData($commonData);
         $this->render('view', compact('translatedInfo', 'meta', /* 'comments', */ 'article', 'revision'));
+    }
+
+    public function actionList($id) {
+        $id = (int) $id;
+        $lang = Yii::app()->getLanguage();
+        if ( !$article = YCMS::model('YArticle', 'model')
+                        ->with(array('published'))->together(true)->findByPk($id) ) {
+            throw new CHttpException(404, Yii::t('YArticleController', self::EXCEPTION_NOT_FOUND));
+        }
+        if ( !$revision = $article->published ) {
+            throw new CHttpException(404, Yii::t('YArticleController', self::EXCEPTION_NOT_PUBLISHED));
+        }
+        if ( !$translatedInfo = $revision->getTranslatedInfo($lang) ) {
+            throw new CHttpException(404, Yii::t('YArticleController', self::EXCEPTION_REVISION_NOT_TRANSLATED));
+        }
+
+        $meta = Yii::app()->getModule('articles')->getComponent('metaBuilder')->build($revision);
+        //$comments = YCMS::model('new', 'YCommentSearch');
+        //$comments->to_object_id = $article->object_id;
+        $languages = array();
+        foreach ( YLanguage::getList() as $language ) {
+            $languages[$language['name']] = $revision->getIsTranslated($language['name']);
+        }
+        $commonData = array(
+            'articleId' => $article->id,
+            'languages' => $languages,
+        );
+        $globalData = Yii::app()->getModule('core')->getComponent('globalData');
+        $globalData->addCommonData($commonData);
+        $this->render('list', compact('translatedInfo', 'meta', /* 'comments', */ 'article', 'revision'));
     }
 
 }

@@ -109,11 +109,6 @@ Photo photo photo1<br>
 Это работает
 
 
-
-
-
-
-
     Тэги
 <div class="tags"><b><?php echo Yii::t('articles', 'Tags'); ?>:</b> 
     <?php
@@ -125,6 +120,8 @@ Photo photo photo1<br>
     ?>
 </div>
 
+    
+    
  <?php   
 /*
 <?php
@@ -138,16 +135,16 @@ Photo photo photo1<br>
 
 
 
-<?php
-/*
+
+
 <div class="article-content">
     <?php
         Yii::app()->syntaxhighlighter->addHighlighter(); 
         echo $translatedInfo->content;
     ?>
 </div>
-*/
-?>
+
+
 
 
 <?php
@@ -185,4 +182,6 @@ Photo photo photo1<br>
     <?php endif; ?>
 </div>
 */
+
+echo CHtml::link('$img', $this->createUrl('list', array('id' => $revision->article->id)));
 ?>

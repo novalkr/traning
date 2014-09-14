@@ -22,16 +22,7 @@ body
 	border: 1px solid #C9E0ED;
 }
 
-#header
-{
-	margin: 0;
-	padding: 0;
-	border-top: 3px solid #C9E0ED;
-}
 
-#logo {
-	width: 150px;
-}
 
 #content
 {
@@ -237,4 +228,28 @@ div.search-form
 .operations li a:hover
 {
 	background: #80CFFF;
+}
+
+
+
+#portfolio-list{
+    /*width: 70%;*/
+    margin: 0 100px;
+    
+    
+}
+
+.categorys-list{
+    /*width: 70%;*/
+    margin: 0 100px;
+    
+    
+}
+
+
+.tags-list{
+    /*width: 70%;*/
+    margin: 0 100px;
+    
+    
 }

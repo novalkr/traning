@@ -78,4 +78,35 @@ class ArticleCategory extends YArticleCategory implements IHasSiteMap
     {
         return self::SITE_MAP_PRIORITY;
     }
+    
+        /**
+     * Returns tags of article
+     * 
+     * @param array $tagsObjectId array of object ids
+     * 
+     * @return array of tags, which have structure array['label', 'name', 'object_id']
+     */
+    public function getTagsList($tagsObjectId = null)
+    {
+        $tagsList = array();
+        $list = self::getList();
+        foreach ($list as $element) {
+            $tagsList[] = array(
+                'name' => ''.$element['name'],
+                'label' => $element['label'],
+                'object_id' => $element['object_id'],
+            );
+        }
+        if (!is_null($tagsObjectId)) {
+            foreach ( $tagsList  as $tagList) {  
+                if ($tagList['object_id'] == $tagsObjectId) {
+                    $tagsListByObjectId [] = $tagList;
+                }
+            }
+            return $tagsListByObjectId;
+        }
+        return $tagsList;
+    }
+    
+    
 }

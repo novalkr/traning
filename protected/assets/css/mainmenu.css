@@ -1,0 +1,152 @@
+#header
+{
+	margin: 0;
+	padding: 0;
+	border-top: 3px solid #C9E0ED;
+}
+
+
+
+/*      
+#headers   .navbar-inner{
+  border-width:5px;
+  border-color: red;
+  border-style:solid;
+  width: 80%;
+  margin: 0 auto;
+}​
+*/
+
+
+#menu-nav{
+z-index: 9;
+}
+#menu-nav .navbar-inner{
+    background-color:white;
+    //background-repeat: repeat;
+    background-image: none;
+}
+
+#menu-nav a{
+    background-color:white;
+}
+
+#menu-nav a:hover {
+    color:black;
+    border-width:5px;
+    border-color: yellow;
+    border-style:solid;
+    margin: 0px;
+    padding: 5px 10px;
+
+}
+
+/*
+#menu-nav  .nav ul{
+display: inline;
+}
+*/
+
+
+#menu-nav  li.active a{
+    background-color:yellow;
+    color: black;
+}
+
+#menu-nav  .nav{
+    /*width: 80%;*/
+    /*
+    border-width:5px;
+    border-color: red;
+    border-style:solid;   
+    */
+    
+       /* margin:0 auto;*/
+    /*text-align:center;*/
+    /*margin-left: 200px;*/
+    /*background-color:white;
+    background-image: none;
+    */
+    /*centring*/
+    
+    left: 30%;
+    position: absolute;
+    
+    /*margin-left: -75px;*/
+    /*width: 300px;*/ 
+
+}
+
+
+
+
+#logo-img {
+    position: fixed;
+    top: 0px;
+    left: 50px;
+    width: 40px;
+    height: 40px;
+    display: block; 
+    z-index: 99;
+
+    /*z-index: 999;*/
+    /*
+    border-width:5px;
+    border-color: red;
+    border-style:solid;   
+    */
+    
+}
+#logo {
+	/*width: 150px;*/
+}
+
+#logo-image-sunset {
+    width: 40px;
+    height: 40px;   
+    /*padding-top: 20px;*/
+}
+
+#logo-image {
+    width: 40px;
+    height: 40px;   
+    /*padding-top: 20px;*/
+}
+
+
+.click{
+    
+    /*margin-top: 50px;*/
+}
+
+.languages {
+    float: left;
+    /*float:right*/
+    padding: 0px;
+    font-size: 11px;
+}
+
+.languages li {
+    margin: 0 0px 0 0;
+    display: inline;
+}
+
+.languages li a {
+    padding-left: 7px;
+    background:url(../images/small-slash-gray.png) no-repeat left center;
+    color: black;
+    z-index: 99;
+}
+
+.languages li.active a, .languages li a:hover {
+    background:url(../images/small-slash-yellow.png) no-repeat left center;
+    z-index: 99;
+}
+
+.languages li.active a, .languages li a:hover, #mainMenu ul li.active a, .tags a:hover,
+ #mainMenu ul li a:hover, .article-text a:hover, .text-comment a:hover, 
+ .portlet-content span a:hover{
+    text-decoration: none;
+    color: #ffb400;    
+}
+

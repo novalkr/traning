@@ -22,7 +22,7 @@
 
 <div class="span-8" 
      style=" 
-        height: 400px;
+        height: 320px;
         border-width:1px; 
         border-color: blue;
         border-style:solid;
@@ -46,7 +46,10 @@
     
     */
     ?>
+    
+    
 <?php 
+/*
     Yii::app()->syntaxhighlighter->addHighlighter();
     $alt= $data->published->info->shortText;
     $alt= strip_tags($alt);
@@ -78,11 +81,10 @@
                $link=CHtml::link($img, $this->createUrl('view', array('id' => $data->id))); 
               
                echo $link;
-               
               
             
             
-            
+      */      
             
             
 /*               
@@ -91,6 +93,52 @@
             </div><!--main_foto-->
             */
 ?>
+
+    
+<?php
+    $alt= $data->published->info->shortText;
+    $alt= strip_tags($alt);
+    $alt= html_entity_decode($alt);
+    
+
+    $root = dirname(Yii::app()->basePath);
+    $upload='/upload/portfolio/';
+    $img=$root . $upload . $data->name . '/logo.jpg';
+    
+    //echo $data->name;
+    //$img='/srv/www/work/tran8'.$img;
+    if (file_exists($img)){
+       $img=$upload . $data->name . '/logo.jpg'; 
+    }  else {
+       $img= $upload.'nologo.jpg';
+    }
+
+            $img= CHtml::image(
+                    $img,
+                    $alt,
+                    array(  
+                       // "width"=>"250px" ,
+                        //"height"=>"300px",
+                        "class"=>"img-potfolio",
+                    )
+               );
+               $link=CHtml::link($img, $this->createUrl('view', array('id' => $data->id))); 
+               echo $link;
+    
+    
+    
+    
+    
+ ?>
+    
+    
+    
+    
+    
+    
+    
+    
+    
 <?php    
     
     /*
