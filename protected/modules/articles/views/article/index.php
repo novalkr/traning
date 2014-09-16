@@ -18,9 +18,9 @@ if ( $meta ) {
 
 
 
-<div     class="categorys-list"><b><?php echo Yii::t('articles', 'Categorys'); ?>:</b> 
-    Выводим категории
-    <?php
+<div     class="categorys-list">
+ 
+       <?php
 //$url = Yii::app()->assetManager->publish(
 //    Yii::getPathOfAlias('ext.myExtension.assets').'/image.png'
 //);
@@ -46,7 +46,7 @@ if ( $meta ) {
 
 
         //giv images
-        //перенести в assets
+        //перенести в assets--
         $root = dirname(Yii::app()->basePath);
         $upload = '/upload/category/';
         $img = $root . $upload . "/$categories.jpg";
@@ -58,7 +58,8 @@ if ( $meta ) {
                             $img, $alt, array(
                         // "width"=>"250px" ,
                         //"height"=>"300px",
-                        "class" => "img-category",
+                        //"class" => "img-category",
+                                'class'=>"img-circle"
                             )
             );
         } else {

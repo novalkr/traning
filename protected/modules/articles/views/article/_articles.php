@@ -1,8 +1,9 @@
 <style>
-.items {
+/*.items {
      position:relative;
 }
-
+*/
+/*
 .items  img {
     //position:absolute;
     top:0;
@@ -12,7 +13,7 @@
         margin: 0;
         padding: 0;
 }
-
+*/
 
     
 </style>
@@ -20,8 +21,8 @@
 
 
 
-<div class="span-8" 
-     style=" 
+<div class="span-6" >
+<!--     style=" 
         height: 320px;
         border-width:1px; 
         border-color: blue;
@@ -29,8 +30,8 @@
         margin: 0;
         padding: 0;
      " ;
-     
        >
+    --> 
     <!-- style="height: 200px;border-width:5px; border-color: red;border-style:solid;" -->
    <?php 
    /*class="pre-articles" 

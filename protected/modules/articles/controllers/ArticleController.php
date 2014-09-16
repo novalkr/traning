@@ -122,6 +122,7 @@ return $env;
      * in the application language set at the moment
      */
     public function actionView($id) {
+          $this->layout = '//layouts/main';
         $id = (int) $id;
         $lang = Yii::app()->getLanguage();
         if ( !$article = YCMS::model('YArticle', 'model')
@@ -152,6 +153,7 @@ return $env;
     }
 
     public function actionList($id) {
+          $this->layout = '//layouts/none';
         $id = (int) $id;
         $lang = Yii::app()->getLanguage();
         if ( !$article = YCMS::model('YArticle', 'model')

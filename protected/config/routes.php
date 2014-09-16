@@ -19,6 +19,15 @@ return array(
     'logout' => 'core/auth/logout',
     'passwordRecovery' => 'core/auth/passwordRecovery',
     'passwordChange' => 'core/auth/passwordChange',
+    //'slider/<id:[\w-+]+>'=>'articles/article/list',
+    //article slyder routes
+    
+    array(
+        'class' => 'YArticleUrlRule',
+        'template' => 'list/{sefPart}',
+        'route' => '/articles/article/list',
+        'pattern' => 'list/<sefPart:[\w-+]>'
+    ),
     
     //static page routes
     array(
@@ -50,6 +59,9 @@ return array(
         'pattern' => '<world:[\w-+]+>/<sefPart:[\w-+]+>'
     ),
     
+     
+    
+    //'/list/<id:(\w+)>/' => '/articles/article/list',
     //voluntary url routes
 //    array(
 //        'class' => 'YVoluntaryUrlRule',

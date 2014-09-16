@@ -11,8 +11,8 @@
  * @license   https://jviba.com/display/license proprietary
  * @link      https://jviba.com/display/PhpDoc
  */
-
 $self = array(
+
     'mvc' => array(
         'basePath' => 'jvibasta.extensions.widgets.assets',
         'js' => array('jquery.form.js'),
@@ -20,11 +20,10 @@ $self = array(
     ),
     'common' => array(
         'basePath' => 'application.assets',
-        'depends' => array('mvc', 'jquery.form', 'bootstrap', 'buttons.panel'),
+        'depends' => array('mvc', 'jquery.form', 'bootstrap',/*'bootstrap3',*/ 'buttons.panel'),
     ),
     'admin' => array(
-        'js' => array(
-        ),
+        'js' => array(),
         'depends' => array('common'),
     ),
     'frontend' => array(
@@ -34,36 +33,60 @@ $self = array(
             'css/ie.css',
             'css/form.css',
             'css/screen.css',
-            'css/mainmenu.css',//main menu style
-            
+            'css/mainmenu.css', //main menu style
+        //    'css/bootstrap.min.css', //Bootstrap 3
         ),
+        //'js'=>array(
+        //    'js/bootstrap.min.js',//Bootstrap 3
+        //    ),
+        
         'depends' => array('common'),
     ),
+    /*
+    'bootstrap3' => array(
+        'basePath' => 'cms.extensions.yiibooster.assets.bootstrap',
+        'css' => array(
+            
+            'css/bootstrap.min.css',
+        ),
+        'js' => array(
+            'js/bootstrap.min.js',
+        ),
+       // 'depends' => array('jquery'),
+    ),
+     * 
+     */
     //init jviba logo
     /*
-    'widgets' => array(
-        'basePath' => 'application.assets',
-        //'basePath' => 'common.assets',
-       //common.widgets.assets'
-        'depends' => array(
-            'widgets.JvibaLogo',
-            //'widgets.ContactsBar',
-            //'widgets.PopupMessage',
-            //'widgets.JuiDialog',
-            //'widgets.StickyScrollWidget',
-            //'widgets.SliderListView',
+      'widgets' => array(
+      'basePath' => 'application.assets',
+      //'basePath' => 'common.assets',
+      //common.widgets.assets'
+      'depends' => array(
+      'widgets.JvibaLogo',
+      //'widgets.ContactsBar',
+      //'widgets.PopupMessage',
+      //'widgets.JuiDialog',
+      //'widgets.StickyScrollWidget',
+      //'widgets.SliderListView',
+      ),
+      ),
+     */
+    /*
+    'bootstrap' => array(
+        'basePath' => 'cms.extensions.yiibooster.assets',
+        'css' => array(
+  
+            'css/bootstrap.min.css',
         ),
-    ),   
-      */
-      
-    
+        //'depends' => array('common'),
+    ),
+    */
 );
 
 $commonPack = include Yii::getpathOfAlias('common') . '/assets.php';
 $cms = include Yii::getPathOfAlias('cms') . '/assets.php';
-$cms=CMap::mergeArray($cms,$commonPack);
+$cms = CMap::mergeArray($cms, $commonPack);
 return CMap::mergeArray(
-    include Yii::getPathOfAlias('jvibasta') . '/assets.php',
-    $cms,
-    $self
+                include Yii::getPathOfAlias('jvibasta') . '/assets.php', $cms, $self
 );

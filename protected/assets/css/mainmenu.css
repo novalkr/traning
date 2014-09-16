@@ -19,6 +19,7 @@
 
 
 #menu-nav{
+    /* margin:0 auto;*/
 z-index: 9;
 }
 #menu-nav .navbar-inner{
@@ -61,17 +62,17 @@ display: inline;
     border-style:solid;   
     */
     
-       /* margin:0 auto;*/
+        margin:0 150px;
     /*text-align:center;*/
     /*margin-left: 200px;*/
     /*background-color:white;
     background-image: none;
     */
     /*centring*/
-    
+    /*
     left: 30%;
     position: absolute;
-    
+    */
     /*margin-left: -75px;*/
     /*width: 300px;*/ 
 
