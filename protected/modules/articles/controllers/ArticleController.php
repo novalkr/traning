@@ -52,7 +52,7 @@ return $env;
      */
     public function actionIndex() {
         $this->layout = '//layouts/main';
-        $model = YCMS::model('new', 'YArticleSearch');
+        $model = YCMS::model('new', 'ArticleSearch');
         $model->revisionType = SandboxBehavior::PUBLISHED_REVISION;
         $model->addSortField('object.create_time', SearchModel::SORT_DIRECTION_DESC);
         $request = Yii::app()->request;

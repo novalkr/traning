@@ -19,8 +19,8 @@ if ( $meta ) {
 
 
 <div     class="categorys-list">
- 
-       <?php
+
+    <?php
 //$url = Yii::app()->assetManager->publish(
 //    Yii::getPathOfAlias('ext.myExtension.assets').'/image.png'
 //);
@@ -49,17 +49,18 @@ if ( $meta ) {
         //перенести в assets--
         $root = dirname(Yii::app()->basePath);
         $upload = '/upload/category/';
-        $img = $root . $upload . "/$categories.jpg";
+        $img = $root . $upload . "$categories.jpg";
 
         if ( file_exists($img) ) {
             //images present
             $img = $upload . "/$categories.jpg";
+
             $img = CHtml::image(
                             $img, $alt, array(
-                        // "width"=>"250px" ,
-                        //"height"=>"300px",
-                        //"class" => "img-category",
-                                'class'=>"img-circle"
+                            // "width"=>"250px" ,
+                            //"height"=>"300px",
+                            //"class" => "img-category",
+                            //'class' => "categorys-list-item-unselect"
                             )
             );
         } else {
@@ -67,15 +68,41 @@ if ( $meta ) {
             $img = CHtml::encode($categorys[$i]['label']);
         }
 
+        $img_sel = $root . $upload . "{$categories}_selected.jpg";
+        if ( file_exists($img_sel) ) {
 
+            $img_sel = $upload . "{$categories}_selected.jpg";
+            $img_sel = CHtml::image(
+                            $img_sel, $alt, array(
+                        // "width"=>"250px" ,
+                        //"height"=>"300px",
+                        //"class" => "img-category",
+                        //'class' => "categorys-list-item-select"
+                            )
+            );
+            if($model->categories==$categories)$img=$img_sel;
+        } else {
+            $img_sel = $img;
+        }
+        ?>
+    
+        <div class="categorys-list-item">
+            <div class="categorys-list-item-unselect">
+                <?php echo $img ?>
+            </div>   
+            <div class="categorys-list-item-select">
+                <?php
+                echo $link = CHtml::link(
+                        $img_sel, array('/articles/article/index',
+                    'categories' => $categories
+                ));
+                ?>
+            </div>  
+        </div>
 
-
-
-
-        //output image
-        echo $link = CHtml::link($img, array('/articles/article/index',
-            'categories' => $categories
-        )) . ' ';
+    
+    
+        <?php
     }
     ?>
 </div>
@@ -84,13 +111,16 @@ if ( $meta ) {
 
 
 
-<div     class="tags-list"><b><?php echo Yii::t('articles', 'Tags'); ?>:</b> 
-    Вывести тэги здесь
+<div     class="tags-list">
+    <?php /*
+      <b><?php echo Yii::t('articles', 'Tags'); ?>:</b>
+     */ ?>
     <?php
 //$tags = YCMS::model('YArticleRevision', 'model') ->getTagsNames();
     $tags = YCMS::model('YArticleTag', 'model')->getTagsList();
 //$tags = $revision->getTagsList();
     for ( $i = 0; $i < count($tags); $i++ ) {
+        echo (($i != 0) ? '<span class="tags-develiter">&bull;</span> ' : '');
         echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index',
             'tags' => $tags[$i]['name'])) . ' ';
     }
@@ -100,9 +130,13 @@ if ( $meta ) {
 
 
 
+
 <div     id="portfolio-list">
 
     <?php
+    
+    //echo $model->getMetaData()->tableSchema->columns;
+    
     $this->widget('YArticlesList', array(// zii.widgets.CListView  YArticlesList
         'id' => 'articles-list-view',
         'dataProvider' => $model->search(),
@@ -121,10 +155,22 @@ if ( $meta ) {
         'htmlOptions' => array(
             'class' => 'row',
         //'style' => 'height: 320px;border-width:5px; border-color: red;border-style:solid;margin:0;padding:0;'
-        )
+        ),
+            //'enablePaginatin'=>false 
     ));
     ?>
 
 </div>
 <!-- end of index data -->
+
+<script>
+
+    /* make proporcial block*/
+    var w = $('.articles-list-item').width()
+    //w = w/2
+    $(".articles-list-item").css({'height': w});
+    $(".articles-list-item img").css({'height': w});
+
+</script>
+
 

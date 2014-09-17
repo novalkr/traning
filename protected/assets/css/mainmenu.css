@@ -35,7 +35,7 @@ z-index: 9;
 #menu-nav a:hover {
     color:black;
     border-width:5px;
-    border-color: yellow;
+    border-color: #ead81a;
     border-style:solid;
     margin: 0px;
     padding: 5px 10px;
@@ -50,7 +50,7 @@ display: inline;
 
 
 #menu-nav  li.active a{
-    background-color:yellow;
+    background-color:#ead81a;
     color: black;
 }
 
