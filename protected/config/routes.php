@@ -21,14 +21,15 @@ return array(
     'passwordChange' => 'core/auth/passwordChange',
     //'slider/<id:[\w-+]+>'=>'articles/article/list',
     //article slyder routes
-    
+    /*
+     * //my abrackadabra
     array(
         'class' => 'YArticleUrlRule',
         'template' => 'list/{sefPart}',
         'route' => '/articles/article/list',
         'pattern' => 'list/<sefPart:[\w-+]>'
     ),
-    
+    */
     //static page routes
     array(
         'class' => 'YPageUrlRule',

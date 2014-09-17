@@ -55,9 +55,11 @@
 
         <div class="container" style="margin-top: 60px;">
 
+            <!--
             <div class="row" style="margin-bottom: 20px;">
             </div><!-- module -->
-
+            
+            
             <?php if ( isset($this->breadcrumbs) ): ?>
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(

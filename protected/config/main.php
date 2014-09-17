@@ -163,6 +163,13 @@ $conf = array(
         'cms.modules.vkontakte.*',
         'cms.modules.vkontakte.controllers.*',
         'cms.modules.vkontakte.components.*',
+        
+        //Added for applikation
+         'application.modules.articles.models.*',
+        'cms.modules.articles.widgets.*',
+        'common.widgets.*',
+        'application.modules.a.*',
+        'application.modules.articles.*',
     ),
     'modules' => array(
         'core' => array(
@@ -238,6 +245,7 @@ $conf = array(
             'class' => 'YContactsModule',
             'basePath' => $cmsModulesBasePath . '/contacts'
         ),
+        /*
         'articles' => array(
             'class' => 'YArticlesModule',
             'basePath' => $cmsModulesBasePath . '/articles',
@@ -253,6 +261,55 @@ $conf = array(
                 ),
             ),
         ),
+        */
+        //Added for application
+        'articles' => array(
+            'class' => 'YArticlesModule',
+            //'basePath' => $appBasePath . '/modules/articles/models',
+            'basePath' => $cmsModulesBasePath . '/articles',
+            'viewPath' => $appBasePath . '/modules/articles/views',
+            'controllerMap' => array(
+                'article' => array(
+                    'class' => 'application.modules.articles.controllers.ArticleController',
+                    'layout' => '//layouts/column2',
+                    'customLayouts' => array(
+                        'view' => '//layouts/column2_main',
+                        'preview' => '//layouts/column2_main',
+                        'index' => '//layouts/column2_main',
+                        'admin' => '//layouts/column1',
+                        'list' => '//layouts/main',
+                    )
+                ),
+                'category' => array(
+                    'layout' => '//layouts/column2',
+                    'customLayouts' => array(
+                        'admin' => '//layouts/column1',
+                    ),
+                ),
+                'tag' => array(
+                    'layout' => '//layouts/column2',
+                    'customLayouts' => array(
+                        'admin' => '//layouts/column1',
+                    ),
+                ),
+            ),
+            /*
+            'components' => array(
+                'metaBuilder' => array(
+                    'class' => 'YArticleMetaBuilder',
+                    'titleTemplate' => '{app} — {title} — {category}',
+                ),
+            ),
+             
+             */
+        ),
+        
+        
+        
+        
+        
+        
+        
         'comments' => array(
             'class' => 'YCommentsModule',
             'basePath' => $cmsModulesBasePath . '/comments',

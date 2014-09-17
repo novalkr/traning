@@ -31,10 +31,24 @@ if ( is_dir($dir) ) { // проверяем наличие директории
       $array [] = $files [$i]; // выводим все файлы
       }
      */
+    $key=array_search('logo.jpg',$files);
+    if(!($key===false)){
+        unset($files[$key]);
+    }
+    
+    if ( sizeof($files) == 0 ) {
+       $portfolio='';
+       $upload='/upload/';
+       $files[]='no_image.jpg';
+        
+    }
+    
     if ( sizeof($files) > 0 ) {
         ?>
         <div id="carousel-portfolio" class="carousel slide" data-ride="carousel">
             <?php
+            
+            
             //next code workin in bootstrap v 3.0 and upper
             /*
               <!-- Индикаторы -->
