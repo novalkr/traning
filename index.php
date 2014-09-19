@@ -11,7 +11,7 @@
  * @license   https://jviba.com/display/license proprietary
  * @link      https://jviba.com/display/PhpDoc
  */
-
+ header('Content-Type: text/html; charset=utf-8');
 $rootdir = dirname(__FILE__);
 
 //initialize environment

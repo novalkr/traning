@@ -371,7 +371,7 @@ in index page tegs list box
 
 }
 
-.articles-list-item-img {
+.articles-list-item img {
     //position:absolute;
     top:0;
     left:0;
@@ -383,7 +383,7 @@ in index page tegs list box
 
 }
 
-.articles-list-item-img:hover {
+.articles-list-item img:hover {
     //position:absolute;
     top:0;
     left:0;

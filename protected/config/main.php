@@ -25,7 +25,8 @@ $packages = is_file($dirname . '/assets.php') ? include $dirname . '/assets.php'
 
 $conf = array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'tran8',
+    'name' => 'traning',
+    //'charset'=>'UTF-8',
     'language' => 'en',
     'preload' => array('log'),
     'import' => array(

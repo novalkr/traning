@@ -86,11 +86,15 @@
         $img = $upload . 'nologo.jpg';
     }
 
+    //$alt = mb_convert_encoding($alt, 'UTF-8', mb_detect_encoding($alt));
+    
     $img = CHtml::image(
-                    $img, $alt, array(
+                    $img, 
+            $alt, 
+            array(
                     // "width"=>"250px" ,
                     //"height"=>"300px",
-                    "class" => "articles-list-item-img",
+                    //"class" => "articles-list-item-img",
                     )
     );
     $link = CHtml::link($img, $this->createUrl('view', array('id' => $data->id)));
