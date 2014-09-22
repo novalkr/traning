@@ -142,28 +142,28 @@ $conf = array(
         'cms.modules.comments.models.forms.*',
         'cms.modules.comments.models.search.*',
         //facebook module section
-        'cms.modules.facebook.*',
-        'cms.modules.facebook.controllers.*',
-        'cms.modules.facebook.components.*',
-        'cms.modules.facebook.widgets.*',
+        //'cms.modules.facebook.*',
+        //'cms.modules.facebook.controllers.*',
+        //'cms.modules.facebook.components.*',
+        //'cms.modules.facebook.widgets.*',
         //google module section
         'cms.modules.google.*',
         'cms.modules.google.controllers.*',
         'cms.modules.google.components.*',
         //invite module section
-        'cms.modules.invite.*',
-        'cms.modules.invite.controllers.*',
-        'cms.modules.invite.components.*',
-        'cms.modules.invite.models.*',
-        'cms.modules.invite.behaviors.*',
+        //'cms.modules.invite.*',
+        //'cms.modules.invite.controllers.*',
+        //'cms.modules.invite.components.*',
+        //'cms.modules.invite.models.*',
+        //'cms.modules.invite.behaviors.*',
         //twitter module section
-        'cms.modules.twitter.*',
-        'cms.modules.twitter.controllers.*',
-        'cms.modules.twitter.components.*',
+        //'cms.modules.twitter.*',
+        //'cms.modules.twitter.controllers.*',
+        //'cms.modules.twitter.components.*',
         //vkontakte module section
-        'cms.modules.vkontakte.*',
-        'cms.modules.vkontakte.controllers.*',
-        'cms.modules.vkontakte.components.*',
+        //'cms.modules.vkontakte.*',
+        //'cms.modules.vkontakte.controllers.*',
+        //'cms.modules.vkontakte.components.*',
         
         //Added for applikation
          'application.modules.articles.models.*',

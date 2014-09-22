@@ -113,17 +113,17 @@ Yii::app()->getClientScript()->registerLinkTag(
 
 
 
-<?php 
+<?php
 /*
-<div class="tags"><b><?php echo Yii::t('articles', 'Tags'); ?>:</b> 
-    <?php //Тэги
-    $tags = $revision->getTagsNames();
-    for ( $i = 0; $i < count($tags); $i++ ) {
-        echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index', 'tags' => $tags[$i]['name'])) . ' ';
-    }
-    ?>
-</div>
-*/
+  <div class="tags"><b><?php echo Yii::t('articles', 'Tags'); ?>:</b>
+  <?php //Тэги
+  $tags = $revision->getTagsNames();
+  for ( $i = 0; $i < count($tags); $i++ ) {
+  echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index', 'tags' => $tags[$i]['name'])) . ' ';
+  }
+  ?>
+  </div>
+ */
 ?>
 
 
@@ -132,7 +132,7 @@ Yii::app()->getClientScript()->registerLinkTag(
   <?php
  * 
   <div class="publ-date">
-  <b><?php echo Yii::t('articles', 'Date of publication'); ?>:</b> 
+  <b><?php echo Yii::t('articles', 'Date of publication'); ?>:</b>
  * <?php echo $revision->create_time; ?>
   </div>
  */
@@ -185,6 +185,11 @@ Yii::app()->getClientScript()->registerLinkTag(
   <?php endif; ?>
   </div>
  */
-
-echo CHtml::link('To view', $this->createUrl('list', array('id' => $revision->article->id)));
+$url_list= CHtml::link(
+        'To view', $this->createUrl(
+                'list', array('id' => $revision->article->id)
+        ), 
+        array('target' => '_blank',/* , 'type' => 'raw', *//*'class'=>'begemot'*/)
+);
+echo $url_list;
 ?>
