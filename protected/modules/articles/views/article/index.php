@@ -53,7 +53,7 @@ if ( $meta ) {
 
         if ( file_exists($img) ) {
             //images present
-            $img = $upload . "/$categories.jpg";
+            $img = $upload . "{$categories}.jpg";
 
             $img = CHtml::image(
                             $img, $alt, array(
@@ -61,17 +61,26 @@ if ( $meta ) {
                             //"height"=>"300px",
                             //"class" => "img-category",
                             //'class' => "categorys-list-item-unselect"
+                            'class' =>(($model->categories==$categories)?
+                                            'categorys-list-item-active'
+                                            :''),
+                                            // "categorys-list-item-unselect"
                             )
             );
         } else {
             //no images
             $img = CHtml::encode($categorys[$i]['label']);
         }
-
-        $img_sel = $root . $upload . "{$categories}_selected.jpg";
+        
+        //$img_sel = $root . $upload . "{$categories}_selected.jpg";
+        $img_sel = $root . $upload . "category_selected.jpg";
+        
         if ( file_exists($img_sel) ) {
 
-            $img_sel = $upload . "{$categories}_selected.jpg";
+            //$img_sel = $upload . "{$categories}_selected.jpg";
+            $img_sel = $upload . "category_selected.jpg";
+            
+            
             $img_sel = CHtml::image(
                             $img_sel, $alt, array(
                         // "width"=>"250px" ,
@@ -80,10 +89,12 @@ if ( $meta ) {
                         //'class' => "categorys-list-item-select"
                             )
             );
-            if($model->categories==$categories)$img=$img_sel;
+            //if($model->categories==$categories)$img=$img_sel;
         } else {
             $img_sel = $img;
         }
+         
+         
         ?>
     
         <div class="categorys-list-item">
@@ -92,10 +103,17 @@ if ( $meta ) {
             </div>   
             <div class="categorys-list-item-select">
                 <?php
+                //echo $img_sel;
+                
                 echo $link = CHtml::link(
-                        $img_sel, array('/articles/article/index',
+                        $img_sel, 
+                        //$img, 
+                        //'',
+                        array(                           
+                            '/articles/article/index',
                     'categories' => $categories
                 ));
+                echo "<p><b>$categories</b></p>";
                 ?>
             </div>  
         </div>

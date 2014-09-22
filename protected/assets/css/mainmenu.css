@@ -116,8 +116,17 @@ display: inline;
 
 
 .click{
-    
+    display: block;
     /*margin-top: 50px;*/
+    width: 100%;
+    background-image: url(/upload/click_ground.jpg);
+    background-repeat: no-repeat;
+    top:40px;
+    height:  60px;
+    position: absolute;
+    background-size: 100%;
+    vertical-align: middle;
+    
 }
 
 .languages {
@@ -125,6 +134,9 @@ display: inline;
     /*float:right*/
     padding: 0px;
     font-size: 11px;
+    vertical-align: middle;
+    padding-top: 9px;
+    padding-left: 70%;
 }
 
 .languages li {

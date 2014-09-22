@@ -46,16 +46,17 @@
                 )
             ));
             ?>
-        </div>
-
         <div class="click">
             <?php $this->renderPartial('//layouts/_languages_bar'); ?>
         </div>
+        </div>
 
 
-        <div class="container" style="margin-top: 60px;">
 
-            <!--
+
+        <div class="container" style="margin-top: 100px;">
+
+            <!-- 
             <div class="row" style="margin-bottom: 20px;">
             </div><!-- module -->
             
