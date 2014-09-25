@@ -347,6 +347,7 @@ div.search-form
     -moz-border-radius: 500px;
     border-radius: 500px;
     //z-index: 60;
+    color:black ;
   
 }
 
@@ -359,6 +360,7 @@ div.search-form
 
 .categorys-list-item-select p{
  
+    border-radius: 500px;
     position: absolute;
     vertical-align: middle;
    margin: auto;

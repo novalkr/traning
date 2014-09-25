@@ -23,14 +23,23 @@ Yii::app()->getClientScript()->registerLinkTag(
 ?>
 
 
+<?php
+$this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
+?>
 
-<div class="social">
-    <?php $this->renderPartial('/article/_social_panel'); ?>
-</div>
+<?php
+/*
+  <div class="social">
+  <?php $this->renderPartial('/article/_social_panel'); ?>
+  </div>
+ */
+?>
 
 
-
-<h1 class="article-title"><?php echo $translatedInfo->title; ?></h1>
+<?php /*
+  <h1 class="article-title"><?php echo $translatedInfo->title; ?></h1>
+ */
+?>
 
 <?php
 /*
@@ -185,11 +194,10 @@ Yii::app()->getClientScript()->registerLinkTag(
   <?php endif; ?>
   </div>
  */
-$url_list= CHtml::link(
-        'To view', $this->createUrl(
-                'list', array('id' => $revision->article->id)
-        ), 
-        array('target' => '_blank',/* , 'type' => 'raw', *//*'class'=>'begemot'*/)
+$url_list = CHtml::link(
+                'To view', $this->createUrl(
+                        'list', array('id' => $revision->article->id)
+                ), array('target' => '_blank', /* , 'type' => 'raw', *//* 'class'=>'begemot' */)
 );
 echo $url_list;
 ?>
