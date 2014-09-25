@@ -10,6 +10,11 @@ if ( $meta ) {
 }
 ?>
 
+
+<?php
+$this->pageTitle = Yii::app()->name . ' - ' . Yii::t('menu', 'Our Project');
+?>
+
 <?php
 /*
   $model = YCMS::model('new', 'YArticleSearch')->getTagsList;
