@@ -23,7 +23,7 @@ $this->pageTitle = Yii::app()->name . ' - ' . Yii::t('menu', 'Our Project');
 
 
 
-<?php  $this->renderPartial('_category',array('model'=>$model,)); ?>
+<?php $this->renderPartial('_category', array('model' => $model,)); ?>
 
 
 <div     class="tags-list">
@@ -36,8 +36,13 @@ $this->pageTitle = Yii::app()->name . ' - ' . Yii::t('menu', 'Our Project');
 //$tags = $revision->getTagsList();
     for ( $i = 0; $i < count($tags); $i++ ) {
         echo (($i != 0) ? '<span class="tags-develiter">&bull;</span> ' : '');
-        echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index',
-            'tags' => $tags[$i]['name'])) . ' ';
+        echo $link = CHtml::link(
+                CHtml::encode(
+                        Yii::t('tags', $tags[$i]['label'])), array(
+            '/articles/article/index',
+            'tags' => $tags[$i]['name']
+                )
+        ) . ' ';
     }
     ?>
 </div>
@@ -49,9 +54,8 @@ $this->pageTitle = Yii::app()->name . ' - ' . Yii::t('menu', 'Our Project');
 <div     id="portfolio-list">
 
     <?php
-    
     //echo $model->getMetaData()->tableSchema->columns;
-    
+
     $this->widget('YArticlesList', array(// zii.widgets.CListView  YArticlesList
         'id' => 'articles-list-view',
         'dataProvider' => $model->search(),

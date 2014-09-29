@@ -163,3 +163,14 @@ display: inline;
     color: #ffb400;    
 }
 
+
+.video_present{
+    top: 69px;
+    position: absolute;
+    width: 100%;
+    //display: block;
+    display: none;
+    height: 150px;
+    background-color: black;
+    
+}

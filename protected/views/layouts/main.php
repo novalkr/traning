@@ -46,21 +46,93 @@
                 )
             ));
             ?>
-        <div class="click">
-            <?php $this->renderPartial('//layouts/_languages_bar'); ?>
+
+            <?php echo "\n"; ?>
+            <div class="click">
+                <?php $this->renderPartial('//layouts/_languages_bar'); ?>
+                <?php echo "\n"; ?>
+                <p class='click_link' onclick="$('.video_present').toggle();" >
+                    <img src="/upload/click_mouse.png" height="10px"/>
+                    kkkkkkkk
+                </p>
+                <?php echo "\n"; ?>
+            </div>
+            <style>
+                .click_link{
+                    top: 10px;
+                    color: white;
+                    //background-color: brown;
+                    position: absolute;
+
+
+                }
+
+            </style>
+            <script>
+
+                /*
+                 $(.click_link).on('click'){
+                 
+                 console.log('jjjjj');
+                 };
+                 */
+                $(document).ready(function() {
+
+                    $(".click_link").click(function() {
+                        $(".video_present").toggle();
+                    });
+
+                });
+/*
+                $('.click_link').click({
+                function() {
+                    alert('Спасибо');
+                    console.log('dddd');
+                }
+
+
+                });
+    */
+                        /*
+                         video_show(){
+                         console.log('jjjjj');
+                         var w = $('.click').heiht()
+                         //w = w/2
+                         $(".click").css({'height': w+100});
+                         
+                         }
+                         */
+            </script>
+            <div class="video_present">
+
+                df df s
+                df 
+                df 
+                sdf
+
+                dfg dg h 
+                g 
+                fg 
+                hfgh
+                fg fgh
+                fg fg
+
+
+            </div>          
+
+
         </div>
-        </div>
 
 
 
 
-        <div class="container" style="margin-top: 100px;">
+        <div class="container" style="margin-top: 65px;">
 
             <!-- 
             <div class="row" style="margin-bottom: 20px;">
             </div><!-- module -->
-            
-            
+
+
             <?php if ( isset($this->breadcrumbs) ): ?>
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(
