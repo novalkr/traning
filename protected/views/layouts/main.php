@@ -49,6 +49,22 @@
 
             <?php echo "\n"; ?>
             <style>
+                .click{
+                    display: block;
+                    /*margin-top: 50px;*/
+                    width: 100%;
+                    background-image: url(/upload/click_ground.jpg);
+                    background-repeat: no-repeat;
+                    top:40px;
+                    height:  60px;
+                    position: absolute;
+                    background-size: 100%;
+                    vertical-align: middle;
+                    z-index: 2000;
+                    line-height:normal;
+
+                }
+
                 #click_link{
                     top: 10px;
                     color: white;
@@ -57,12 +73,13 @@
 
 
                 }
-                
-                
+
                 #click_link img{
-                    heiht: 5px;
+                    height: 12px;
                     
-                }
+
+                }                
+
 
             </style>
             <div class="click">
@@ -70,7 +87,8 @@
                 <?php echo "\n"; ?>
                 <p id='click_link' onclick="$('.video_present').toggle();" >
                     <img src="/upload/click_mouse.png" />
-                    kkkkkkkk
+                    <br>
+                        kkkkkkkk
                 </p>
                 <?php echo "\n"; ?>
             </div>
@@ -89,25 +107,25 @@
                     });
 
                 });
-/*
-                $('.click_link').click({
-                function() {
-                    alert('Спасибо');
-                    console.log('dddd');
-                }
-
-
-                });
-    */
-                        /*
-                         video_show(){
-                         console.log('jjjjj');
-                         var w = $('.click').heiht()
-                         //w = w/2
-                         $(".click").css({'height': w+100});
-                         
-                         }
-                         */
+                /*
+                 $('.click_link').click({
+                 function() {
+                 alert('Спасибо');
+                 console.log('dddd');
+                 }
+                 
+                 
+                 });
+                 */
+                /*
+                 video_show(){
+                 console.log('jjjjj');
+                 var w = $('.click').heiht()
+                 //w = w/2
+                 $(".click").css({'height': w+100});
+                 
+                 }
+                 */
             </script>
             <div class="video_present">
 

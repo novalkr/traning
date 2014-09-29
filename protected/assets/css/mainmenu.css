@@ -115,19 +115,10 @@ display: inline;
 }
 
 
-.click{
-    display: block;
-    /*margin-top: 50px;*/
-    width: 100%;
-    background-image: url(/upload/click_ground.jpg);
-    background-repeat: no-repeat;
-    top:40px;
-    height:  60px;
-    position: absolute;
-    background-size: 100%;
-    vertical-align: middle;
-    
-}
+
+
+
+
 
 .languages {
     float: left;

@@ -38,8 +38,7 @@ $ret = array(
         //'url'   => array('/page/service'),
     ),
     array(
-        'label' => Yii::t('menu', 'Blog'),
-        //'url'   => 'http://blog',
+        'label' => Yii::t('menu', 'Blog'),        
         'url'   => Yii::app()->getParams()->jvibablog,
     ),
     array(
