@@ -517,6 +517,7 @@ $conf = array(
                 'enabled' => false,
             ),
         ),
+       'jvibablog'=>('http://blog.jviba.com/'),
     ),
 );
 

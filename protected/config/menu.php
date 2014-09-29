@@ -39,7 +39,8 @@ $ret = array(
     ),
     array(
         'label' => Yii::t('menu', 'Blog'),
-        'url'   => 'http://blog',
+        //'url'   => 'http://blog',
+        'url'   => Yii::app()->getParams()->jvibablog,
     ),
     array(
         'label' => Yii::t('menu', 'Contacts'),

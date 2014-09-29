@@ -48,17 +48,8 @@
             ?>
 
             <?php echo "\n"; ?>
-            <div class="click">
-                <?php $this->renderPartial('//layouts/_languages_bar'); ?>
-                <?php echo "\n"; ?>
-                <p class='click_link' onclick="$('.video_present').toggle();" >
-                    <img src="/upload/click_mouse.png" height="10px"/>
-                    kkkkkkkk
-                </p>
-                <?php echo "\n"; ?>
-            </div>
             <style>
-                .click_link{
+                #click_link{
                     top: 10px;
                     color: white;
                     //background-color: brown;
@@ -66,8 +57,23 @@
 
 
                 }
+                
+                
+                #click_link img{
+                    heiht: 5px;
+                    
+                }
 
             </style>
+            <div class="click">
+                <?php $this->renderPartial('//layouts/_languages_bar'); ?>
+                <?php echo "\n"; ?>
+                <p id='click_link' onclick="$('.video_present').toggle();" >
+                    <img src="/upload/click_mouse.png" />
+                    kkkkkkkk
+                </p>
+                <?php echo "\n"; ?>
+            </div>
             <script>
 
                 /*
@@ -126,7 +132,7 @@
 
 
 
-        <div class="container" style="margin-top: 65px;">
+        <div class="container" style="margin-top: 75px;">
 
             <!-- 
             <div class="row" style="margin-bottom: 20px;">
