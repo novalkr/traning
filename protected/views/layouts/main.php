@@ -56,77 +56,59 @@
                     background-image: url(/upload/click_ground.jpg);
                     background-repeat: no-repeat;
                     top:40px;
-                    height:  60px;
+                    height:  40px;
                     position: absolute;
                     background-size: 100%;
                     vertical-align: middle;
-                    z-index: 2000;
+                    //z-index: 2000;
                     line-height:normal;
 
                 }
 
                 #click_link{
-                    top: 10px;
+                    top: 4px;
                     color: white;
                     //background-color: brown;
                     position: absolute;
-
+                    left: 48%;
 
                 }
 
                 #click_link img{
-                    height: 12px;
-                    
+                    height: 18px;
+
 
                 }                
+                .video_present{
+                    top: 75px;
+                    position: absolute;
+                    width: 100%;
+                    //display: block;
+                    display: none;
+                    height: 150px;
+                    background-color: black;
 
+                }
+                #click_hide{
+                    height: 150px;
+                    display: none;
+                }
 
             </style>
             <div class="click">
                 <?php $this->renderPartial('//layouts/_languages_bar'); ?>
                 <?php echo "\n"; ?>
-                <p id='click_link' onclick="$('.video_present').toggle();" >
+                <p id='click_link' onclick="$('.video_present').toggle();
+                    /*$('.container').css({'margin-top': '175px'});*/
+                    $('#click_hide').toggle();
+                   
+                   " >
                     <img src="/upload/click_mouse.png" />
                     <br>
-                        kkkkkkkk
+                        Click
                 </p>
                 <?php echo "\n"; ?>
             </div>
-            <script>
-
-                /*
-                 $(.click_link).on('click'){
-                 
-                 console.log('jjjjj');
-                 };
-                 */
-                $(document).ready(function() {
-
-                    $(".click_link").click(function() {
-                        $(".video_present").toggle();
-                    });
-
-                });
-                /*
-                 $('.click_link').click({
-                 function() {
-                 alert('Спасибо');
-                 console.log('dddd');
-                 }
-                 
-                 
-                 });
-                 */
-                /*
-                 video_show(){
-                 console.log('jjjjj');
-                 var w = $('.click').heiht()
-                 //w = w/2
-                 $(".click").css({'height': w+100});
-                 
-                 }
-                 */
-            </script>
             <div class="video_present">
 
                 df df s
@@ -150,12 +132,12 @@
 
 
 
-        <div class="container" style="margin-top: 75px;">
+        <div class="container" style="margin-top: 80px;">
 
             <!-- 
             <div class="row" style="margin-bottom: 20px;">
             </div><!-- module -->
-
+            <div id="click_hide"></div>
 
             <?php if ( isset($this->breadcrumbs) ): ?>
                 <?php

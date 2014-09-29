@@ -89,7 +89,11 @@ $this->pageTitle = Yii::app()->name . ' - ' . Yii::t('menu', 'Our Project');
     //w = w/2
     $(".articles-list-item").css({'height': w});
     $(".articles-list-item img").css({'height': w});
-
+    /* make proporcial block*/
+    var w = $('.articles-list-item').width()
+    //w = w/2
+    $(".articles-list-item").css({'height': w});
+    $(".articles-list-item img").css({'height': w});
 </script>
 
 

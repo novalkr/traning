@@ -148,7 +148,18 @@ $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
 ?>
 
 
-
+<script type="text/javascript">
+function list_preview(){
+        var generator = window.open('', 'csv', 'height=400,width=600');
+        generator.document.write('<html><head><title>CSV</title>');
+        generator.document.write('</head><body >');
+        generator.document.write('<textArea cols=70 rows=15 wrap="off" >');
+        //generator.document.write(data);
+        generator.document.write('</textArea>');
+        generator.document.write('<body  html>');
+        generator.document.close();      
+}
+</script>
 <div class="article-content">
     <?php
     Yii::app()->syntaxhighlighter->addHighlighter();
@@ -164,6 +175,37 @@ $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
   <div class="social">
   <?php $this->renderPartial('/article/_social_panel'); ?>
   </div>
+ */
+?>
+<style>
+    .list_link{
+        
+        background-color: blue;
+        color: white;
+        
+    }    
+    
+</style>
+<!-- //открывается в новрм окне -->
+<div class="list_link" onclick="window.open('<?php echo  $this->createUrl('list', array('id' => $revision->article->id)) ?>','', 'height=600,width=800,location=no,toolbar=no,status=no')">to priview</div>
+<!-- //надо сделать всплывающим div блоком -->
+
+
+<?php
+/*
+<script>
+function list_preview(){
+        var generator = window.open('', 'csv', 'height=400,width=600');
+        generator.document.write('<html><head><title>CSV</title>');
+        generator.document.write('</head><body >');
+        generator.document.write('<textArea cols=70 rows=15 wrap="off" >');
+        //generator.document.write(data);
+        generator.document.write('</textArea>');
+        generator.document.write('</body></html>');
+        generator.document.close();      
+}
+</script>
+ * 
  */
 ?>
 <?php
@@ -194,10 +236,16 @@ $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
   <?php endif; ?>
   </div>
  */
+
+//$url_to_list= $this->createUrl('list', array('id' => $revision->article->id));
+        
+        
 $url_list = CHtml::link(
                 'To view', $this->createUrl(
                         'list', array('id' => $revision->article->id)
-                ), array('target' => '_blank', /* , 'type' => 'raw', *//* 'class'=>'begemot' */)
+                ), array('target' => '_blank', 
+                    /* , 'type' => 'raw', *//* 'class'=>'begemot' */)
 );
+
 echo $url_list;
 ?>
