@@ -25,5 +25,6 @@ return array (
   'read more' => 'читать далее ',
   'Previous'  => 'Предыдущая',
   'Next'      => 'Следующая',
+    'Technology'=>'Технологии проекта',
  );
 

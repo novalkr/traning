@@ -24,6 +24,7 @@ Yii::app()->getClientScript()->registerLinkTag(
 
 
 <?php
+//fix page title
 $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
 ?>
 
@@ -122,18 +123,11 @@ $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
 
 
 
-<?php
-/*
-  <div class="tags"><b><?php echo Yii::t('articles', 'Tags'); ?>:</b>
-  <?php //Тэги
-  $tags = $revision->getTagsNames();
-  for ( $i = 0; $i < count($tags); $i++ ) {
-  echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index', 'tags' => $tags[$i]['name'])) . ' ';
-  }
-  ?>
-  </div>
- */
-?>
+
+
+
+ 
+
 
 
 <?php
@@ -249,3 +243,33 @@ $url_list = CHtml::link(
 
 echo $url_list;
 ?>
+
+
+<style>
+    .techmology{
+        text-align: center;
+        background-color: #3071a9;
+        color: white;
+        padding: 10px;
+    }    
+    .techmology a{
+        color: white;
+    }
+    
+</style>
+
+  <!--//Это можно применить как "используемые технологии'-->
+  <div class="techmology">
+          <b><?php echo Yii::t('articles', 'Technology'); ?>:</b>
+          <hr>
+  <?php //Тэги
+  $tags = $revision->getTagsNames();
+  for ( $i = 0; $i < count($tags); $i++ ) {
+  echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index', 'tags' => $tags[$i]['name'])) . ' ';
+  }
+  ?>
+          
+  </div>
+  
+  
+  
