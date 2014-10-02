@@ -281,8 +281,8 @@ div.search-form
    /*float:bottom;*/
    //border: 5px solid red;
   
-   display: inline-block;
-   
+   //display: inline-block;
+   display: table;
    //display: table;
    /*width: 100%;*/
    //text-align: justify;
@@ -294,6 +294,7 @@ div.search-form
     
     position:relative;
     display: table;
+    float: left;
     
 
 }
