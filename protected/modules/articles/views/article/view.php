@@ -126,7 +126,7 @@ $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
 
 
 
- 
+
 
 
 
@@ -143,7 +143,7 @@ $this->pageTitle = Yii::app()->name . ' - ' . $translatedInfo->title;
 
 
 <script type="text/javascript">
-function list_preview(){
+    function list_preview() {
         var generator = window.open('', 'csv', 'height=400,width=600');
         generator.document.write('<html><head><title>CSV</title>');
         generator.document.write('</head><body >');
@@ -151,16 +151,26 @@ function list_preview(){
         //generator.document.write(data);
         generator.document.write('</textArea>');
         generator.document.write('<body  html>');
-        generator.document.close();      
-}
+        generator.document.close();
+    }
 </script>
-<div class="article-content">
-    <?php
-    Yii::app()->syntaxhighlighter->addHighlighter();
-    echo $translatedInfo->content;
-    ?>
-</div>
 
+<?php
+$cont_page = '';
+$cont_page = $cont_page . '<div class="article-content">';
+Yii::app()->syntaxhighlighter->addHighlighter();
+/* печатаем содержимое файла  upload/portfolio/name.css */
+$f_name = "./upload/portfolio_css/{$article->name}.css";
+if ( file_exists($f_name) ) {
+    $cont_page = $cont_page . "<style>\n";
+    $cont_page = $cont_page . file_get_contents/* readfile */($f_name);
+    $cont_page = $cont_page . "</style>\n";
+}
+$cont_page = $cont_page . $translatedInfo->content;
+
+$cont_page = $cont_page . '</div>';
+//echo $cont_page;
+?>
 
 
 
@@ -171,105 +181,149 @@ function list_preview(){
   </div>
  */
 ?>
-<style>
-    .list_link{
-        
-        background-color: blue;
-        color: white;
-        
-    }    
-    
-</style>
-<!-- //открывается в новрм окне -->
-<div class="list_link" onclick="window.open('<?php echo  $this->createUrl('list', array('id' => $revision->article->id)) ?>','', 'height=600,width=800,location=no,toolbar=no,status=no')">to priview</div>
-<!-- //надо сделать всплывающим div блоком -->
+<?php /*
+          <style>
+          .list_link{
 
+          background-color: blue;
+          color: white;
 
-<?php
-/*
-<script>
-function list_preview(){
-        var generator = window.open('', 'csv', 'height=400,width=600');
-        generator.document.write('<html><head><title>CSV</title>');
-        generator.document.write('</head><body >');
-        generator.document.write('<textArea cols=70 rows=15 wrap="off" >');
-        //generator.document.write(data);
-        generator.document.write('</textArea>');
-        generator.document.write('</body></html>');
-        generator.document.close();      
-}
-</script>
- * 
- */
-?>
-<?php
-/*
-  <div class="article-comments-block">
-  <div class="comments-title"><?php echo Yii::t('comments', 'Article comments'); ?></div>
-  <?php
-  if ($this->getModule()->useCommenting) : ?>
-  <div class="comments">
-  <?= Yii::t('comments', 'Comments:');?>
-  <div id="comments-list">
-  <?php
-  $this->widget('application.modules.comments.widgets.BCommentsListView', array(
-  'dataProvider'=>$comments->search(),
-  'itemView' => 'application.modules.comments.widgets.views._comment_list_item',
-  ));
-  ?>
-  </div>
-  <div class="comment-form">
-  <?php
-  $this->widget('cms.modules.comments.widgets.YCommentCreateFormView', array(
-  'to_object_id' => $article->object_id,
-  'view' => 'application.modules.comments.widgets.views._form'
-  ));
-  ?>
-  </div>
-  </div>
-  <?php endif; ?>
-  </div>
- */
+          }
+
+          </style>
+          <!-- //открывается в новрм окне -->
+          <div class="list_link" onclick="window.open('
+
+          <?php
+          echo $this->createUrl('list', array('id' => $revision->article->id))
+          ?>
+          ', '', 'height=600,width=800,location=no,toolbar=no,status=no')">
+         * to priview
+         * </div>
+          <!-- //надо сделать всплывающим div блоком -->
+         */  ?>
+
+        <?php
+        /*
+          <script>
+          function list_preview(){
+          var generator = window.open('', 'csv', 'height=400,width=600');
+          generator.document.write('<html><head><title>CSV</title>');
+          generator.document.write('</head><body >');
+          generator.document.write('<textArea cols=70 rows=15 wrap="off" >');
+          //generator.document.write(data);
+          generator.document.write('</textArea>');
+          generator.document.write('</body></html>');
+          generator.document.close();
+          }
+          </script>
+         * 
+         */
+        ?>
+        <?php
+        /*
+          <div class="article-comments-block">
+          <div class="comments-title"><?php echo Yii::t('comments', 'Article comments'); ?></div>
+          <?php
+          if ($this->getModule()->useCommenting) : ?>
+          <div class="comments">
+          <?= Yii::t('comments', 'Comments:');?>
+          <div id="comments-list">
+          <?php
+          $this->widget('application.modules.comments.widgets.BCommentsListView', array(
+          'dataProvider'=>$comments->search(),
+          'itemView' => 'application.modules.comments.widgets.views._comment_list_item',
+          ));
+          ?>
+          </div>
+          <div class="comment-form">
+          <?php
+          $this->widget('cms.modules.comments.widgets.YCommentCreateFormView', array(
+          'to_object_id' => $article->object_id,
+          'view' => 'application.modules.comments.widgets.views._form'
+          ));
+          ?>
+          </div>
+          </div>
+          <?php endif; ?>
+          </div>
+         */
 
 //$url_to_list= $this->createUrl('list', array('id' => $revision->article->id));
-        
-        
-$url_list = CHtml::link(
-                'To view', $this->createUrl(
-                        'list', array('id' => $revision->article->id)
-                ), array('target' => '_blank', 
-                    /* , 'type' => 'raw', *//* 'class'=>'begemot' */)
-);
 
-echo $url_list;
-?>
+        /*
+          $url_list = CHtml::link(
+          'To view', $this->createUrl(
+          'list', array('id' => $revision->article->id)
+          ), array('target' => '_blank',
+          // , 'type' => 'raw', //// 'class'=>'begemot'
+          )
+          );
 
+          echo $url_list;
+         */
+        ?>
 
-<style>
-    .techmology{
-        text-align: center;
-        background-color: #3071a9;
-        color: white;
-        padding: 10px;
-    }    
-    .techmology a{
-        color: white;
-    }
-    
-</style>
+        <?php /* <
+          <style>
+          .techmology{
+          text-align: center;
+          background-color: #3071a9;
+          color: white;
+          padding: 10px;
+          }
+          .techmology a{
+          color: white;
+          }
 
-  <!--//Это можно применить как "используемые технологии'-->
-  <div class="techmology">
+          </style>
+         */ ?>
+
+        <!--//Это можно применить как "используемые технологии'-->
+        <?php /* <div class="techmology"> */ ?>
+        <?php /*
+          <div class="tech-name">
           <b><?php echo Yii::t('articles', 'Technology'); ?>:</b>
           <hr>
-  <?php //Тэги
-  $tags = $revision->getTagsNames();
-  for ( $i = 0; $i < count($tags); $i++ ) {
-  echo $link = CHtml::link(CHtml::encode($tags[$i]['label']), array('/articles/article/index', 'tags' => $tags[$i]['name'])) . ' ';
-  }
-  ?>
-          
+         * */ ?>
+
+        <?php
+        //Тэги
+        $tech_cont = '';
+        $tags = $revision->getTagsNames();
+        for($i = 0;
+        $i < count($tags);
+        $i++) {
+        $tech_cont = $tech_cont. ''./* $link = */CHtml::link(
+                CHtml::encode($tags[$i][ 'label'] ) ,  array('/articles/article/index', 'tags' => $tags[$i]['name'])
+                ) . ' '
+        ;
+}
+?>
+<?php /*
   </div>
-  
-  
-  
+ */ ?>
+
+
+<?php
+$prev_link = " onclick=\"window.open('" .
+    $this->createUrl('list', array('id' => $revision->article->id))
+    .
+    "', '', 'height=600,width=800,location=no,toolbar=no,status=no')\"";
+
+
+
+//$tech_cont_pos=strrpos($cont_page, '{{tech_cont}}');
+//replace marker of technology tag
+$cont_page = str_replace('{{tech_cont}}', $tech_cont, $cont_page);
+//replace link to preview project
+$cont_page = str_replace('onclick="prev_link"', $prev_link, $cont_page);
+
+echo $cont_page;
+
+
+
+
+
+
+

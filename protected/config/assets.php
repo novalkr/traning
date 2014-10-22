@@ -34,7 +34,11 @@ $self = array(
             'css/form.css',
             'css/screen.css',
             'css/mainmenu.css', //main menu style
+            'css/style.css',//for project
         //    'css/bootstrap.min.css', //Bootstrap 3
+        ),
+        'js'=>array(
+            'js/scripts.js',
         ),
         //'js'=>array(
         //    'js/bootstrap.min.js',//Bootstrap 3

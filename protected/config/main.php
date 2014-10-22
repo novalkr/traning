@@ -214,12 +214,13 @@ $conf = array(
         'static' => array(
             'class' => 'YStaticModule',
             'basePath' => $cmsModulesBasePath . '/static',
+            'viewPath' => $appBasePath . '/modules/static/views',
             'controllerMap' => array(
                 'page' => array(
                     'class' => 'YPageController',
                     'layout' => '//layouts/column2',
                     'customLayouts' => array(
-                        'view' => '//layouts/column2_main',
+                        'view' => '//layouts/main',
                         'preview' => '//layouts/column2_main',
                         'admin' => '//layouts/column1',
                     )
@@ -325,10 +326,13 @@ $conf = array(
                 ),
             ),
         ),
+        /*
         'facebook' => array(
             'class' => 'YFacebookModule',
             'basePath' => $cmsModulesBasePath . '/facebook'
         ),
+         
+         */
         'google' => array(
             'class' => 'YGoogleModule',
             'basePath' => $cmsModulesBasePath . '/google'
@@ -337,14 +341,20 @@ $conf = array(
             'class' => 'YInviteModule',
             'basePath' => $cmsModulesBasePath . '/invite'
         ),
+        /*
         'twitter' => array(
             'class' => 'YTwitterModule',
             'basePath' => $cmsModulesBasePath . '/twitter'
         ),
+         * 
+         */
+        /*
         'vkontakte' => array(
             'class' => 'YVkontakteModule',
             'basePath' => $cmsModulesBasePath . '/vkontakte'
         ),
+         * 
+         */
     ),
     'components' => array(
         'console' => array(

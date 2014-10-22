@@ -18,7 +18,8 @@
             'items' => array(
                 array(
                     'class' => 'bootstrap.widgets.TbMenu',
-                    'items' => require Yii::getPathOfAlias('application.config.admin_menu') . '.php',
+                    //'items' => require Yii::getPathOfAlias('application.config.admin_menu') . '.php',
+                    'items' => require Yii::getPathOfAlias('application.config.menu') . '.php', 
                 ),
                 array(
                     'class' => 'bootstrap.widgets.TbButton',

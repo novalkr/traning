@@ -22,14 +22,18 @@ return array(
     //'slider/<id:[\w-+]+>'=>'articles/article/list',
     //article slyder routes
     /*
-     * //my abrackadabra
+      //my abrackadabra
     array(
         'class' => 'YArticleUrlRule',
         'template' => 'list/{sefPart}',
         'route' => '/articles/article/list',
         'pattern' => 'list/<sefPart:[\w-+]>'
     ),
-    */
+    
+     
+     */
+    
+    
     //static page routes
     array(
         'class' => 'YPageUrlRule',

@@ -54,6 +54,7 @@
                     /*margin-top: 50px;*/
                     width: 100%;
                     background-image: url(/upload/click_ground.jpg);
+                    //background-image: url(/img/head-wrap-back.png);
                     background-repeat: no-repeat;
                     top:40px;
                     height:  40px;
@@ -80,17 +81,18 @@
 
                 }                
                 .video_present{
-                    top: 75px;
+                    top: 40px;//79px;
                     position: absolute;
                     width: 100%;
                     //display: block;
                     display: none;
-                    height: 150px;
-                    background-color: black;
+                    height: 450px;
+                    background: url('/img/head-wrap-back.png') no-repeat
+                    //background-color: black;
 
                 }
                 #click_hide{
-                    height: 150px;
+                    height: 416px;
                     display: none;
                 }
 
@@ -99,9 +101,10 @@
                 <?php $this->renderPartial('//layouts/_languages_bar'); ?>
                 <?php echo "\n"; ?>
                 <p id='click_link' onclick="$('.video_present').toggle();
-                    /*$('.container').css({'margin-top': '175px'});*/
-                    $('#click_hide').toggle();
-                   
+                        /*$('.container').css({'margin-top': '175px'});*/
+                        $('#click_hide').toggle();
+                        $('.click').hide();
+
                    " >
                     <img src="/upload/click_mouse.png" />
                     <br>
@@ -109,22 +112,52 @@
                 </p>
                 <?php echo "\n"; ?>
             </div>
-            <div class="video_present">
+            <div >
+            <div class="video_present" >
+            <div >
+                <?php $this->renderPartial('//layouts/_languages_bar'); ?>
+                <?php echo "\n"; ?>
+                <p id='click_link' onclick="$('.video_present').toggle();
+                        /*$('.container').css({'margin-top': '175px'});*/
+                        $('#click_hide').toggle();
+                        $('.click').toggle();
 
-                df df s
-                df 
-                df 
-                sdf
+                   " >
+                    <img src="/upload/click_mouse.png" />
+                    <br>
+                        Click
+                </p>
+                <?php echo "\n"; ?>
+            </div>
+                <div class="content wrap-header">
+                
+               
+                        <span class="h1 color-white clear h1-hide">
+                            Успешные сайты делают
+                            <span class="money">
+                                деньги
+                            </span>
+                            
+                        </span>
+                    
+                        <span class="h2 color-white">
+                            Ваш проект - это ничто иное как проекция бизнеса в виртуальную реальность интернета. 
+                        </span>
+                        <p class="text-align-c color-white">
+                            Стало интерестно КАК ЭТО УСТРОЕНО?
+                        </p>
+                        <div class="big-button">
+                            <a href="color-white">ЖМИ</a>
+                        </div>
+                        <span class="h4 text-align-c color-yellow">
+                            <a href="#" class="color-yellow wrap-for-big-but">Скачать презентацию
+                            </a>	
+                        </span>
+                    </div>
+          
+            </div>
 
-                dfg dg h 
-                g 
-                fg 
-                hfgh
-                fg fgh
-                fg fg
-
-
-            </div>          
+        </div>          
 
 
         </div>
@@ -139,6 +172,39 @@
             </div><!-- module -->
             <div id="click_hide"></div>
 
+			<div class="wrap wrap-header after wrap-header-anim">
+				<div class="content">
+					<div class="lang after">
+                <?php $this->renderPartial('//layouts/_languages_bar'); ?>
+                <?php echo "\n"; ?>
+                                            
+						
+					</div>
+					<div class="block-hide">
+						<span class="h1 color-white clear h1-hide">
+							Успешные сайты делают
+							<span class="money">
+								деньги
+							</span>
+						</span>
+						<span class="h2 color-white">
+							Ваш проект - это ничто иное как проекция бизнеса в виртуальную реальность интернета. 
+						</span>
+						<p class="text-align-c color-white">
+							Стало интерестно КАК ЭТО УСТРОЕНО?
+						</p>
+						<div class="big-button">
+							<a href="color-white">ЖМИ</a>
+						</div>
+						<span class="h4 text-align-c color-yellow">
+							<a href="#" class="color-yellow wrap-for-big-but">Скачать презентацию
+							</a>	
+						</span>
+					</div>
+				</div>
+			</div>            
+            
+            
             <?php if ( isset($this->breadcrumbs) ): ?>
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -156,51 +222,45 @@
                 ));
                 ?>
             </div>
-
+</div><!-- page -->
             <div class="clear"></div>
 
             <div id="footer">
-                
-
-    
-
-
-
-                              <?php
-            $this->widget('bootstrap.widgets.TbNavbar', array(
-                'type' => 'inverse',
-                'fixed'=>'sbottom',
-                //'brand' => CHtml::encode(Yii::app()->name),
-                'brand' => false,
-                'brandUrl' => array('/site/admin'),
-                'items' => array(
-                    array(
-                        'class' => 'bootstrap.widgets.TbMenu',
-                        'items' => require Yii::getPathOfAlias('application.config.menu') . '.php', //login_
-                    ),
-                ),
-                //'id' => 'menu',//nav_menu
-                //'itemOptions'=>array('id'=>'main_menu'),
-                'htmlOptions' => array(
-                    //'class' => 'row',
-                    //'style' => 'border-width:5px; border-color: red;border-style:solid;width: 80%;margin:0 auto;text-align:center;' ,
-                    'id' => 'footer-menu-nav',
-                )
-            ));
-            ?>
-            <div id="footer-logo-img">
                 <?php
-                //$ad= Yii::app()->getParams()->admin;   
-                $this->widget('common.widgets.JvibaLogo');
-                ?> 
-            </div>
+                $this->widget('bootstrap.widgets.TbNavbar', array(
+                    'type' => 'inverse',
+                    'fixed' => 'sbottom',
+                    //'brand' => CHtml::encode(Yii::app()->name),
+                    'brand' => false,
+                    'brandUrl' => array('/site/admin'),
+                    'items' => array(
+                        array(
+                            'class' => 'bootstrap.widgets.TbMenu',
+                            'items' => require Yii::getPathOfAlias('application.config.menu') . '.php', //login_
+                        ),
+                    ),
+                    //'id' => 'menu',//nav_menu
+                    //'itemOptions'=>array('id'=>'main_menu'),
+                    'htmlOptions' => array(
+                        //'class' => 'row',
+                        //'style' => 'border-width:5px; border-color: red;border-style:solid;width: 80%;margin:0 auto;text-align:center;' ,
+                        'id' => 'footer-menu-nav',
+                    )
+                ));
+                ?>
+                <div id="footer-logo-img">
+                    <?php
+                    //$ad= Yii::app()->getParams()->admin;   
+                    $this->widget('common.widgets.JvibaLogo');
+                    ?> 
+                </div>
 
-                
+
 
 
             </div><!-- footer -->
 
-        </div><!-- page -->
+        
 
     </body>
 

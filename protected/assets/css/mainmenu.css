@@ -159,7 +159,11 @@ display: inline;
 }
 
 
-
+.video_present{
+    
+background: url('/img/head-wrap-back.png') no-repeat     
+    
+}
 
 
 
@@ -169,14 +173,14 @@ display: inline;
 z-index: 9;
 }
 #footer-menu-nav .navbar-inner{
-    background-color:grey;
+    background-color: #515151;//grey;
     //background-repeat: repeat;
     background-image: none;
     min-height: 15px;
 }
 
 #footer-menu-nav a{
-    background-color:grey;
+    background-color: #515151;//grey;
     padding: 2px 10px;
     color: black;
     
@@ -185,7 +189,7 @@ z-index: 9;
 #footer-menu-nav a:hover {
     color:yellow;
     border-width:0px;
-    border-color: grey;
+    background-color: #515151;//grey;
     border-style:solid;
     margin: 0px;
     padding: 2px 10px;
@@ -200,7 +204,7 @@ display: inline;
 
 
 #footer-menu-nav  li.active a{
-    background-color:grey;
+   background-color: #515151;//grey;
     color: yellow;
 }
 
